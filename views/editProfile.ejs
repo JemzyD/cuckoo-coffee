@@ -1,0 +1,23 @@
+<%req%>
+<div class="container col-md-4 col-md-offset-4 vertical-center">
+  <form enctype='multipart/form-data' action='/auth/profile/editprofile' method='post'>
+    <h2>Update Profile</h2>
+    <div class="form-group">
+      <label for='name'>Name</label>
+      <input type="text" name="name" value="<%=req.name %>">
+    </div>
+    <div class="form-group">
+      <label for='contact'>Contact</label>
+      <input type="text" name="contact" value="<%=req.contact %>">
+    </div>
+    <div class="form-group">
+      <label for='interests'>Interests</label>
+      <input type="text" name="interests" value="<%= req.interests %>">
+    </div>
+    <div class="form-group">
+      <label for="profilePicture">Attach Profile Picture</label>
+      <input type='file' name='profilePicture'>
+    </div>
+    <button type="submit" class='btn btn-default '>Submit</button>
+</form>
+</div>

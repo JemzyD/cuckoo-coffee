@@ -1,0 +1,55 @@
+<div class='container moveDown'>
+
+    <form class="form-horizontal" id='eventsYouOrganized'>
+      <h3 class='col-ml-3 control-label pull-left'>Events you organized</h3>
+      <div class="form-group">
+        <a href ="/auth/profile/events/create-event"<button type="button" class="btn btn-default pull-right col-ml-1">Organize new event</button></a>
+      </div>
+    </form>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date/Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%user%>
+        <% user.eventsOrganized.forEach(function (item) {%>
+          <tr>
+          <td><a href= "/auth/events/event/<%= item.id%>"><%= item.eventName %></a></td>
+          <td><%= item.startDate%></td>
+          <td> <a href ="/auth/profile/events/<%= item.id%>"<button type="button" class="btn btn-default">Edit Event</button></a></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+
+      <form class="form-horizontal" id="eventsYoureAttending">
+        <div class="form-group">
+          <h3 class='col-ml-3 control-label pull-left'>Events you're attending</h3>
+        </div>
+      </form>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date/Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% user.eventsAttending.forEach(function (item) {%>
+            <tr>
+              <td><a href= "/auth/events/event/<%= item.id%>"><%= item.eventName %></a></td>
+              <td><%= item.startDate%></td>
+              <td><form  action="/auth/profile/events/<%= item._id%>/withdraw?_method=PUT" method="POST">
+                <button type="submit" value="Withdraw" class="btn btn-default">Withdraw</button>
+              </form></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+
+        
+  </div>

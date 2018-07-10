@@ -1,0 +1,35 @@
+<div class="container col-md-4 col-md-offset-4 vertical-center">
+<% user %>
+  <form action="/auth/profile/events/create-event" method="POST">
+    <h3>Create new event</h3>
+    <div class="form-group">
+      <label for="startDate">Date/Time</label>
+      <input type= "datetime-local" name="startDate" id="dateInput">
+    </div>
+    <div class="form-group">
+      <label for="eventName">Event Name</label>
+      <input type="text" name="eventName" value="">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" name="description" value="">
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" name="location" value="">
+    </div>
+    <div class="form-group">
+      <label for="typeOfEvent">Type of Event</label>
+      <input type="text" name="typeOfEvent" value="" placeholder = 'Free/Paid, Confirmed/Proposed'>
+    </div>
+    <div class="form-group">
+      <label for="numberOfSpots">Available Spots</label>
+      <input type="number" name="numberOfSpots" value="">
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" name="contact" value="" placeholder='Number/Email'>
+    </div>
+    <button type="submit" class='btn btn-default ' id='submittingNewEvent'>Submit</button>
+  </form>
+</div>

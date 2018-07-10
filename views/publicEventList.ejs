@@ -1,0 +1,88 @@
+<!-- have made this ejs file non-public-->
+<div class="container moveDown">
+  <%- include ./widgets/alerts %>
+<% event %>
+  <h1>More about <%= event.eventName %></h1>
+  <div class="row moveDown">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Organizer</th>
+              <th>Description</th>
+              <th>Available Spots</th>
+              <th>Contact</th>
+              <th>Attendees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td><%= event.organizerName%></td>
+            <td> <%= event.description%></td>
+            <td><%= event.numberOfSpots %></td>
+            <td><%= event.contact %></td>
+            <td><button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">View All </button>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h5>Location: <%= event.location %></h5>
+        <div id="map" style="width:500px;height:380px;"></div>
+      </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Attendees</h4>
+      </div>
+      <div class="modal-body">
+        <% event.attendees.forEach(function(eachAttendee){ %>
+            <a href='/auth/profile/<%= eachAttendee.id%>'><%= eachAttendee.name %></a>
+            </br>
+        <% }) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6c-UE34TsbZV8Sf1fWM7ZX9KTzepWi6o&callback=initMap" async defer></script>
+
+  <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+           zoom: 8,
+           center: {lat: -34.397, lng: 150.644}
+         });
+         var geocoder = new google.maps.Geocoder();
+        geocodeAddress(geocoder, map)
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+      //  var address = document.getElementById('address').value;
+      console.log(<%- JSON.stringify(event) %>);
+      var address = <%- JSON.stringify(event.location) %>
+       geocoder.geocode({'address': address}, function(results, status) {
+         if (status === 'OK') {
+           resultsMap.setCenter(results[0].geometry.location);
+           var marker = new google.maps.Marker({
+             map: resultsMap,
+             position: results[0].geometry.location
+           });
+         } else {
+           alert('Geocode was not successful for the following reason: ' + status);
+         }
+       });
+     }
+  </script>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="jumbotron vertical-center">
+  <div class="container">
+
+    <h3>LOGIN</h3>
+    <form action="/auth/login" method="POST" class='form-horizontal'>
+      <div class="form-group ">
+        <label for="email" class="control-label col-sm-2 col-sm-offset-2" >Email Address</label>
+        <div class="col-sm-4">
+          <input type="text" class='form-control' id='email' name="email" placeholder="Enter Email Address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="control-label col-sm-2 col-sm-offset-2" >Password</label>
+        <div class="col-sm-4">
+          <input type="password" class='form-control' name="password" placeholder="Enter Password">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

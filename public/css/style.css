@@ -1,0 +1,103 @@
+body {
+  /*padding-top: 70px;*/
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+#landing{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.jumbotron {
+    background-image: url("/images/background.jpg");
+    background-color: white;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: black;
+    /*margin-top: -10px;*/
+    text-align: center;
+    /*text-shadow:-2px 0 #000000,0 2px #000000,5px 0 #000000,0 -1px #000000;*/
+}
+
+
+.nav-bar {
+  margin-bottom: 0px;
+}
+
+label{
+    display:inline-block;
+    width:100px;
+}
+.table td{
+  text-align: center;
+}
+
+.table th{
+  text-align: center;
+}
+
+#eventsYoureAttending{
+  margin-top: 3%;
+}
+
+#eventsYouOrganized{
+  margin-top: 4%;
+}
+
+#tableAddFiles{
+  margin-top: 15%;
+}
+
+#tableAddFilesOtherUser {
+  margin-top: 5%;
+}
+
+#uploadFilesForm{
+  margin-top: 10%;
+  border-radius: 10%;
+}
+
+.btn-default{
+  margin-top: 1%;
+}
+
+.moveDown{
+ margin-top: 5%;
+}
+
+.moveDownLess{
+  margin-top: 8%;
+}
+#profileDiv{
+  margin-bottom: 5%;
+}
+
+#greeting{
+  margin-bottom: 5%;
+}
