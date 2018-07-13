@@ -1,11 +1,11 @@
   <div class="container moveDown">
-    <h2 id='greeting'>Hello <%- user.name %></h2>
+    <h2 id='greeting'>Welcome, <%- user.name %>!</h2>
     <% addFile2 %>
     <% user %>
     <div id="profileDiv">
       <div class="col-md-2 pull-md-10">
         <% if(user.image){ %>
-          <img src='<%= user.image %>'>
+          <img src='<%= user.image %>' style='height:180px;width:180px'; />
           <% } %>
         </div>
         <div class="col-md-10 push-md-2">
@@ -13,8 +13,8 @@
             <li class='list-group-item text-left'>Contact:  <%= user.contact %></li>
             </ul>
             <% } %>
-            <% if(user.interests){ %>
-              <li class='list-group-item text-left'>Interests:  <%= user.interests %></li>
+            <% if(user.aboutme){ %>
+              <li class='list-group-item text-left'>About Me:  <%= user.aboutme %></li>
               <% } %>
             </div>
           </div>

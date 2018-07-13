@@ -27,7 +27,6 @@ cloudinary.config({
 
 var fs = require('fs')
 var image = require('./models/imageModel')
-// var cheerio = require('cheerio')
 
 // initialize app
 var app = express()

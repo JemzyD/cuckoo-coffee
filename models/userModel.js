@@ -14,7 +14,7 @@ var userSchema = new mongoose.Schema({
 
   contact: {type: String},
 
-  interests: {type: String},
+  aboutme: {type: String},
 
   memberSince: {type: Date, default: Date.now()},
 

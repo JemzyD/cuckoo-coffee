@@ -4,7 +4,7 @@
   <div id="profileDiv">
     <div class="col-md-2 pull-md-10">
       <% if(foundUser.image){ %>
-        <img src='<%= foundUser.image %>'>
+        <img src='<%= foundUser.image %>' style='height:160px;width:160px'; />
         <% } %>
       </div>
       <div class="col-md-10 push-md-2">
@@ -13,9 +13,9 @@
           <li class='list-group-item'>Contact:  <%= foundUser.contact %></li>
           </ul>
         <% } %>
-        <% if(foundUser.interests){ %>
+        <% if(foundUser.aboutme){ %>
           <ul class='list-group'>
-          <li class='list-group-item'>Interests:  <%= foundUser.interests %></li>
+          <li class='list-group-item'>About Me:  <%= foundUser.aboutme %></li>
           </ul>
          <% } %>
       </div>

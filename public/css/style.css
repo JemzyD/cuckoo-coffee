@@ -40,11 +40,22 @@ body {
     -webkit-background-size: cover;
     background-size: cover;
     color: black;
-    /*margin-top: -10px;*/
     text-align: center;
-    /*text-shadow:-2px 0 #000000,0 2px #000000,5px 0 #000000,0 -1px #000000;*/
 }
 
+.jumbotron h1{
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.jumbotron h3{
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.jumbotron p{
+  font-weight: 350;
+}
 
 .nav-bar {
   margin-bottom: 0px;
@@ -101,3 +112,8 @@ label{
 #greeting{
   margin-bottom: 5%;
 }
+/*
+#profileDiv{
+  height: 75px;
+  width: 130px;
+}*/

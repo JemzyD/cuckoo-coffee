@@ -19,7 +19,6 @@ router.get('/events', function (req, res) {
   })
 })
 
-//SHIFTED THIS TO USER CONTROLLER
 // // full route: /public/events/events/:id
 router.get('/events/event/:id', function (req, res) {
   eventVar.findById(req.params.id, function (err, event) {

@@ -3,7 +3,6 @@ var mongoose = require('mongoose')
 var eventSchema = new mongoose.Schema({
   startDate: {type: Date, require: true, min: Date.now()},
   eventName: {type: String, require: true},
-  // organizerName: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   organizerName: {type: String, require: true},
   description: {type: String},
   location: {type: String, require: true},

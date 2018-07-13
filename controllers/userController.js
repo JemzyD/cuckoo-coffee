@@ -52,11 +52,16 @@ router.get('/profile', isLoggedIn, function (req, res) {
   })
 })
 router.post('/profile', upload.single('myFile'), function (req, res) {
+
   cloudinary.uploader.upload(req.file.path, function (result) {
+
     console.log('trying to upload')
     console.log(req.user)
+
     User.findById(req.user.id, function (err, user) {
+
       if (err)console.log(err)
+
       addFile.create({
         user: req.user.id,
         title: req.body.title,
@@ -64,9 +69,12 @@ router.post('/profile', upload.single('myFile'), function (req, res) {
         date: req.body.date,
         addFileProperties: result.url
       }, function (err, image) {
+        
         if (err) {
+
           console.log(err)
         } else {
+
           console.log('before redirect')
           req.flash('success', 'File successfully uploaded')
           res.redirect('/auth/profile')
@@ -91,10 +99,11 @@ router.post('/profile/editprofile', upload.single('profilePicture'), function (r
       User.findByIdAndUpdate(req.user.id, {
         image: result.url,
         contact: req.body.contact,
-        interests: req.body.interests
+        aboutme: req.body.aboutme
       }, function (err, user) {
-        if (err)console.log(err)
-        else {
+        if (err){
+          console.log(err)
+        }else {
           req.flash('success', 'Profile updated')
           res.redirect('/auth/profile')
         }
@@ -103,7 +112,7 @@ router.post('/profile/editprofile', upload.single('profilePicture'), function (r
   } else {
     User.findByIdAndUpdate(req.user.id, {
       contact: req.body.contact,
-      interests: req.body.interests
+      aboutme: req.body.aboutme
     }, function (err, user) {
       if (err)console.log(err)
       else {
@@ -282,7 +291,6 @@ router.get('/profile/:id', isLoggedIn, function (req, res) {
 })
 
 
-//SHIFTED FROM PUBLIC CONTROLLER
 router.get('/events/event/:id', isLoggedIn, function (req, res) {
   eventVar
   .findById(req.params.id)
